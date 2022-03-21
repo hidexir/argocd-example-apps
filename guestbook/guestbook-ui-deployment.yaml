@@ -13,13 +13,13 @@ spec:
       labels:
         app: guestbook-ui
     spec:
-      resources:
-        limits:
-          cpu: "1"
-        requests:
-          cpu: "0.5"
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
         name: guestbook-ui
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            cpu: "1"
+          requests:
+            cpu: "0.5"
